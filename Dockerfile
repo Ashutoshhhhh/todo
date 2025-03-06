@@ -13,6 +13,7 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
+VOLUME ["/app/cred"]
 # Expose the port if your server runs on a specific port (e.g., 3000)
 EXPOSE 3000
 

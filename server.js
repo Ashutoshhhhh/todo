@@ -20,7 +20,7 @@ app.post('/signup',(req,res)=>{
     const {email,password}=req.body;
     let emailPassArray=[];
     try{
-        const data=fs.readFileSync('email-pass.json','utf-8');
+        const data=fs.readFileSync('./cred/email-pass.json','utf-8');
         emailPassArray=data?JSON.parse(data):[];
     }
     catch(err){
@@ -33,8 +33,8 @@ app.post('/signup',(req,res)=>{
     emailPassArray.push({email,password});
     try{
         const safeEmail = email.replace(/[@.]/g, "_"); 
-        fs.writeFileSync(`${safeEmail}.json`,JSON.stringify({ tasks: [] }, null, 2),'utf-8');
-        fs.writeFileSync('email-pass.json',JSON.stringify(emailPassArray,null,2),'utf-8');
+        fs.writeFileSync(`./temp/${safeEmail}.json`,JSON.stringify({ tasks: [] }, null, 2),'utf-8');
+        fs.writeFileSync('./cred/email-pass.json',JSON.stringify(emailPassArray,null,2),'utf-8');
         return res.status(201).json({msg:'you have created account successfully'});
     }
     catch(err){
@@ -45,7 +45,7 @@ app.post('/signin',(req,res)=>{
     const {email,password}=req.body;
     let dataArray=[];
     try{
-        const data=fs.readFileSync('email-pass.json','utf-8');
+        const data=fs.readFileSync('./cred/email-pass.json','utf-8');
         dataArray=data?JSON.parse(data):[];
     }
     catch(err){
@@ -60,7 +60,7 @@ app.post('/signin',(req,res)=>{
     const safeEmail=email.replace(/[@.]/g,"_");
     let userTask=[];
     try{
-        const data=fs.readFileSync(`${safeEmail}.json`,'utf-8');
+        const data=fs.readFileSync(`./temp/${safeEmail}.json`,'utf-8');
         userTask=data?JSON.parse(data).tasks:[]
 
        }
@@ -80,7 +80,7 @@ app.post('/createtodo',(req,res)=>{
     const safeEmail=email.replace(/[@.]/g,"_");
     let tasks=[];
     try{
-        const data=fs.readFileSync(`${safeEmail}.json`,'utf-8');
+        const data=fs.readFileSync(`./temp/${safeEmail}.json`,'utf-8');
         tasks=data?JSON.parse(data).tasks:[];
     }
     catch(err){
@@ -91,7 +91,7 @@ app.post('/createtodo',(req,res)=>{
     }
     tasks.push(inputTask);
     try{
-        fs.writeFileSync(`${safeEmail}.json`,JSON.stringify({tasks:tasks},null,2));
+        fs.writeFileSync(`./temp/${safeEmail}.json`,JSON.stringify({tasks:tasks},null,2));
         return res.status(201).json({message:'the task was written',task:tasks});
     }
     catch(err){
@@ -107,7 +107,7 @@ app.put('/deltask',(req,res)=>{
     const safeEmail=email.replace(/[@.]/g,"_");
     let taskArray=[];
     try{
-        const data=fs.readFileSync(`${safeEmail}.json`,'utf-8');
+        const data=fs.readFileSync(`./temp/${safeEmail}.json`,'utf-8');
         taskArray=data?JSON.parse(data).tasks:[];
     }
     catch(err){
@@ -124,7 +124,7 @@ app.put('/deltask',(req,res)=>{
     
     
     try{
-        fs.writeFileSync(`${safeEmail}.json`,JSON.stringify({tasks:taskArray},null,2),'utf-8');
+        fs.writeFileSync(`./temp/${safeEmail}.json`,JSON.stringify({tasks:taskArray},null,2),'utf-8');
         return res.status(200).json({message:'task was deleted successfully'});
     }
     catch(err){
