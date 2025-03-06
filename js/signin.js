@@ -11,7 +11,7 @@ async function getHome() {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/signin', {
+        const response = await fetch('http://3.110.133.108:3000/signin', {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
