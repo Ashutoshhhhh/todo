@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    background-color: #A7D7C5;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrollbars */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ✅ Adjusted background circles for better alignment */
+.topleft, .topright {
+    width: 700px; /* ✅ Adjusted for better balance */
+    height: 700px;
+    background-color: #C1E3D6;
+    border-radius: 30%;
+    position: fixed; /* ✅ Fixed position for better layout */
+    z-index: -1; /* ✅ Ensures they stay in the background */
+}
+
+.topleft {
+    top: -250px;  /* ✅ Move up slightly */
+    left: -250px; /* ✅ Move left slightly */
+    transform: rotate(45deg);
+}
+
+.topright {
+    bottom: -250px; /* ✅ Move down slightly */
+    right: -250px; /* ✅ Move right slightly */
+    transform: rotate(45deg);
+}
+.content{
+    width: 900px;
+    min-height:500px;
+    background-color: white;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.inputtask{
+    width: 70%;
+    height: 40px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: medium;
+    border-radius: 10px;
+    background-color: #A7D7C5;
+    border: 2px solid #566e66;
+}
+.addtodo{
+    width: 73%;
+    height: 60px;
+    padding: 10px;
+    font-size: large;
+    background-color: #31a77c;
+    border-style: none;
+    border-radius: 10px;
+    color: black;
+    font-size: medium;
+    cursor: pointer;
+    transition: .70s;
+}
+.addtodo:hover{
+    opacity: .70;
+}
+.tasks{
+    height: 40px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #A7D7C5;
+    border-radius: 9px;
+    padding: 10px;
+}
+p{
+    margin-left: 20px;
+}
+.delete,.js-delete{
+    margin-right: 20px;
+    width: 90px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: black;
+    border-radius: 10px;
+    border-style: none;
+    transition: .50s;
+    cursor: pointer;
+}
+.delete:hover{
+    opacity: .70;
+}

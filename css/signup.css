@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    background-color: #A7D7C5;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrollbars */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ✅ Adjusted background circles for better alignment */
+.topleft, .topright {
+    width: 700px; /* ✅ Adjusted for better balance */
+    height: 700px;
+    background-color: #C1E3D6;
+    border-radius: 30%;
+    position: fixed; /* ✅ Fixed position for better layout */
+    z-index: -1; /* ✅ Ensures they stay in the background */
+}
+
+.topleft {
+    top: -250px;  /* ✅ Move up slightly */
+    left: -250px; /* ✅ Move left slightly */
+    transform: rotate(45deg);
+}
+
+.topright {
+    bottom: -250px; /* ✅ Move down slightly */
+    right: -250px; /* ✅ Move right slightly */
+    transform: rotate(45deg);
+}
+
+/* ✅ Improved Signup Box Centering */
+.signup {
+    width: 450px;
+    height: 450px;
+    background-color: white;
+    border-radius: 20px; /* ✅ Softer rounded edges */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* ✅ Adds depth */
+    
+    position: relative;
+    z-index: 1; /* ✅ Ensures it's above the circles */
+}
+.content{
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+h1{
+    margin-bottom: 8px;
+
+}
+.para,.para1{
+    padding-top: 0px;
+    margin-top: 0px;
+    width: 70%;
+    color: #32403B;
+    font-size: small;
+    margin-bottom: 40px;
+   
+    
+}
+.js-para{
+    padding-top: 0px;
+    margin-top: 0px;
+    width: 70%;
+    color: red;
+    font-size: small;
+    margin-bottom: 40px;
+}
+.email,.pass{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #C1E3D6;
+    border: 2px solid #A7D7C5;
+    color: rgb(0, 0, 0);
+    font-size: medium;
+}
+.createacc{
+    height: 50px;
+    width: 260px;
+    background-color: #31a77c;
+    border-style: none;
+    border-radius: 10px;
+    color: black;
+    font-size: medium;
+    cursor: pointer;
+    transition: .70s;
+}
+.createacc:hover{
+    opacity: 80%;
+}
