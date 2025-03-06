@@ -8,7 +8,7 @@ async function post(email,password){
         return
     }
     try{
-        const response= await fetch('http://3.110.133.108:3000/signup',{
+        const response= await fetch('http://13.232.222.178:3000/signup',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({

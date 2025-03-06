@@ -28,7 +28,7 @@ function render(task) {
 }
 async function delet(task,taskDiv){
     try{
-        const response=await fetch('http://3.110.133.108:3000/deltask',{
+        const response=await fetch('http://13.232.222.178:3000/deltask',{
             method:"PUT",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({email,task})
@@ -74,7 +74,7 @@ async function post(inputTask) {
         return;
     }
     try {
-        const response = await fetch('http://3.110.133.108:3000/createtodo', {
+        const response = await fetch('http://13.232.222.178:3000/createtodo', {
             method: "POST",
             headers: { "Content-Type": "application/json" }, // ✅ Fixed headers
             body: JSON.stringify({ email, inputTask })
