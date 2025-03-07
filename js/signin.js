@@ -11,7 +11,7 @@ async function getHome() {
     }
 
     try {
-        const response = await fetch('http://13.201.122.190:3000/signin', {
+        const response = await fetch('http://13.201.32.98:3000/signin', {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
